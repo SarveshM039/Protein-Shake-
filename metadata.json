@@ -1,0 +1,6 @@
+{
+  "name": "Veloce Kinetic Botanical",
+  "description": "Clean athletic fuel and apothecary-grade botanical performance nutrition.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@theme {
+  /* Veloce Kinetic Botanical Color Tokens */
+  --color-canvas: #FAF9F6;
+  --color-surface: #FFFFFF;
+  --color-border-hairline: #E8E5DF;
+  --color-botanical: #1B4332;
+  --color-botanical-deep: #012D1D;
+  --color-forest: #2D6A4F;
+  --color-sage-tint: #E8F0EC;
+  --color-sage-muted: #D5E4DC;
+  --color-coral: #E05A47;
+  --color-coral-hover: #C84B39;
+  --color-ink: #1A1A1A;
+  --color-ink-muted: #595959;
+  --color-outline: #717973;
+
+  /* Typography */
+  --font-display: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Ambient Botanical & Coral Elevation */
+  --shadow-card-rest: 0 4px 20px -2px rgba(27, 67, 50, 0.04);
+  --shadow-card-hover: 0 12px 32px -4px rgba(27, 67, 50, 0.08);
+  --shadow-coral-cta: 0 8px 24px -2px rgba(224, 90, 71, 0.25);
+}
+
+@layer base {
+  html {
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+.cta-coral {
+  background-color: #E05A47;
+  color: #FFFFFF;
+  transition: background-color 180ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 180ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cta-coral:hover:not(:disabled) {
+  background-color: #C84B39;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px -2px rgba(224, 90, 71, 0.25);
+}
+
+.cta-coral:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.veloce-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E8E5DF;
+  box-shadow: 0 4px 20px -2px rgba(27, 67, 50, 0.04);
+  transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 200ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.veloce-card-interactive:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px -4px rgba(27, 67, 50, 0.08);
+  border-color: #D6D1C8;
+}
+
+.veloce-input {
+  background-color: #FFFFFF;
+  border: 1px solid #E8E5DF;
+  border-radius: 0.5rem;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.veloce-input:focus {
+  outline: none;
+  border-color: #2D6A4F;
+  box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.14);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .cta-coral,
+  .veloce-card {
+    transition: none;
+  }
+  .cta-coral:hover,
+  .veloce-card-interactive:hover {
+    transform: none;
+  }
+}
